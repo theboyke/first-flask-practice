@@ -7,8 +7,16 @@
 </head>
 
 <body>
-  <h1>Hello, world!</h1>
+  <h1>Hello, {{name}}!</h1>
   <img src="../static/apple-6-color-logo-100763179-large.jpg" />
+  {% if signed_in %}
+  <h1>Welcome back!</h1>
+  <button>Sign Out</button>
+  {% else %}
+  <h1>Hello Stranger!</h1>
+  <button>Sign In</button>
+  <button>Sign Up</button>
+  {% endif %}
 </body>
 
 </html>
