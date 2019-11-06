@@ -1,10 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
-    return '<h1>Why so easy</h1>'
+    # by default looks for index.html inside a templates folder in the same directory as this script.
+    return render_template('index.html')
 
 
 # @app.route("/another")
@@ -14,7 +15,7 @@ def index():
 
 @app.route('/user/<username>')
 def show(username):
-    return f"Hi {username[0:5]}"
+    return f"Hi {username[5]}"
 
 
 if __name__ == '__main__':
